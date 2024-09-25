@@ -57,19 +57,21 @@ function playRound(humanChoice, computerChoice) {
   if (humanChoice == computerChoice) {
     ties++
     console.log("Its a tie")
-    result = "Its a tie"
+    result = `Both players picked ${humanChoice}. Its a tie`
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
     humanScore++
-    console.log(`${humanChoice} beats ${computerChoice}, You Win!`)
+    console.log(
+      `Human picked ${humanChoice} which beats computer's ${computerChoice}, You Win!`
+    )
     result = `${humanChoice} beats ${computerChoice}, You Win!`
   } else {
     computerScore++
     console.log(`${computerChoice} beats ${humanChoice}, You Lose!`)
-    result = `${computerChoice} beats ${humanChoice}, You Lose!`
+    result = `Computer picked ${computerChoice} which beats human's ${humanChoice}, You Lose!`
   }
   if (humanScore === 5 || computerScore === 5) {
     buttons.forEach((button) => {
